@@ -35,9 +35,12 @@ Lookup = [['1','2','3'],
 
 Rows = [Row1, Row2, Row3, Row4]
 Columns = [Col1, Col2, Col3]
+counter = 0
+counter2 = 0
 
 def ScanISR(pin):
     global counter
+    global counter2
     global push_flag
     global time_stamp
     
@@ -64,6 +67,14 @@ def ScanISR(pin):
                     break
                 
                 else:
+                    counter = counter  +1
+                    if(counter == 8):
+                        lcd.send_cmd(0xC0)
+                        
+                    if(counter == 15):
+                        lcd.lcd_clear()
+                        counter = 0
+                    
                     lcd.lcd_message(message)
                     break
                 

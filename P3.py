@@ -25,7 +25,7 @@ def ISR(pin):
     
     time_now = time.time()
     
-    if pin == BUTTON and not push_flag and (time_now - time_stamp) >= 0.03: # check if button pin generated interrupt
+    if pin == BUTTON and not push_flag and (time_now - time_stamp) >= 0.10: # check if button pin generated interrupt
         push_flag = 1
         counter = counter + 1
         lcd.lcd_clear()

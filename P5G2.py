@@ -72,9 +72,6 @@ def ISR(pin):
     binary_code = (A_old << 3) | (B_old << 2) | (A_new << 1) | B_new
     direction = lookup_list[binary_code]
     
-    print('binary code: ', binary_code)
-    print('direction: ', direction)
-    
     
     A_old = A_new
     B_old = B_new
